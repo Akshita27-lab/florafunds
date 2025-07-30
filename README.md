@@ -1,6 +1,6 @@
-# Florafunds (Spendly) - Personal Finance Tracker
+# Florafunds  - Personal Finance Tracker
 
-Florafunds (also known as Spendly) is a full-stack personal finance tracker that helps users manage their income, expenses, and financial reports with a modern, responsive interface. It features secure authentication, transaction management, insightful reports, and a beautiful UI with dark mode support.
+Florafunds  is a full-stack personal finance tracker that helps users manage their income, expenses, and financial reports with a modern, responsive interface. It features secure authentication, transaction management, insightful reports, and a beautiful UI with dark mode support.
 
 ---
 
