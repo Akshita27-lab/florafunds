@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florafunds - Personal Finance Tracker</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="main-header">
+    <div class="logo-title">
+      <img src="https://img.icons8.com/fluency/48/000000/wallet.png" alt="Finora Logo" class="logo"/>
+      <span class="title">Florafunds</span>
+    </div>
+    <nav class="main-nav">
+      <button id="nav-dashboard" class="nav-btn">Dashboard</button>
+      <button id="nav-transactions" class="nav-btn">Transactions</button>
+      <button id="nav-reports" class="nav-btn">Reports</button>
+      <button id="theme-toggle" class="nav-btn">🌙</button>
+      <button id="logout-btn" class="nav-btn">Logout</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Login/Register Page -->
+    <section id="auth-section" class="centered-section">
+      <div class="auth-card animated-card">
+        <h2>Welcome to <span class="brand">Florafunds</span></h2>
+        <form id="auth-form">
+          <div class="input-group">
+            <input type="text" id="username" required />
+            <label for="username">Username</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="password" required />
+            <label for="password">Password</label>
+          </div>
+          <button type="submit" class="primary-btn">Login / Register</button>
+        </form>
+        <div id="auth-message"></div>
+      </div>
+    </section>
+
+    <!-- Dashboard Page -->
+    <section id="dashboard-section" class="hidden fade-section">
+      <h2 class="section-title">Dashboard</h2>
+      <div class="summary-cards">
+        <div class="card income-card">
+          <div class="card-icon"><img src="https://img.icons8.com/color/48/000000/money-bag.png"/></div>
+          <div class="card-label">Total Income</div>
+          <div class="card-value" id="total-income">$0</div>
+        </div>
+        <div class="card expense-card">
+          <div class="card-icon"><img src="https://img.icons8.com/color/48/000000/expense.png"/></div>
+          <div class="card-label">Total Expense</div>
+          <div class="card-value" id="total-expense">$0</div>
+        </div>
+        <div class="card balance-card">
+          <div class="card-icon"><img src="https://img.icons8.com/color/48/000000/bank-card-back-side.png"/></div>
+          <div class="card-label">Balance</div>
+          <div class="card-value" id="balance">$0</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transactions Page -->
+    <section id="transactions-section" class="hidden fade-section">
+      <h2 class="section-title">Transactions</h2>
+      <form id="transaction-form" class="transaction-form">
+        <div class="input-group">
+          <input type="text" id="trans-desc" required />
+          <label for="trans-desc">Description</label>
+        </div>
+        <div class="input-group">
+          <input type="number" id="trans-amount" required />
+          <label for="trans-amount">Amount</label>
+        </div>
+        <div class="input-group">
+          <select id="trans-type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+          <label for="trans-type">Type</label>
+        </div>
+        <div class="input-group">
+          <input type="text" id="trans-category" required />
+          <label for="trans-category">Category</label>
+        </div>
+        <div class="input-group">
+          <input type="date" id="trans-date" required />
+          <label for="trans-date">Date</label>
+        </div>
+        <button type="submit" class="primary-btn">Add Transaction</button>
+      </form>
+      <div id="transaction-message"></div>
+      <div class="table-container">
+        <table id="transactions-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Type</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Transactions will be rendered here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Reports Page -->
+    <section id="reports-section" class="hidden fade-section">
+      <h2 class="section-title">Reports</h2>
+      <div class="charts-container">
+        <div class="chart-card">
+          <h3>Category-wise Expense</h3>
+          <canvas id="pie-chart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Monthly Trends</h3>
+          <canvas id="line-chart"></canvas>
+        </div>
+      </div>
+      <button id="export-csv" class="primary-btn">Export CSV</button>
+    </section>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="hidden"></div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <span>© 2024 Florafunds. All rights reserved.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html> 
