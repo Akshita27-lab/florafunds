@@ -10,19 +10,6 @@ Florafunds (also known as Spendly) is a full-stack personal finance tracker that
 
 ---
 
-## 📸 Screenshots
-
-
-- **Login Page:**  
-  ![Login Page](screenshots/login.png)
-- **Dashboard:**  
-  ![Dashboard](screenshots/dashboard.png)
-- **Transactions:**  
-  ![Transactions](screenshots/transactions.png)
-- **Reports:**  
-  ![Reports](screenshots/reports.png)
-
----
 
 ## ✨ Features
 
